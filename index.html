@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A-TEK SERVICES - Automate. Innovate. Elevate.</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@800,900&amp;f[]=satoshi@400,500,700&amp;display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #050505;
+            --accent-orange: #f27a21;
+            --accent-blue: #34c1ed;
+            --accent-cyan: #00f2ff;
+        }
+
+        * { box-sizing: border-box; }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: 'Satoshi', sans-serif;
+            background-color: var(--bg-dark);
+            color: #fff;
+            margin: 0;
+            min-height: 100vh;
+            overflow-x: hidden;
+            line-height: 1.5;
+            display: flex;
+            flex-direction: column;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Cabinet Grotesk', sans-serif;
+            line-height: 0.95;
+        }
+
+        .page-wrap {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        main {
+            flex: 1 0 auto;
+        }
+
+        footer {
+            margin-top: auto;
+        }
+
+        .glass {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .neon-border-orange:hover {
+            border-color: rgba(242, 122, 33, 0.6);
+            box-shadow: 0 0 20px rgba(242, 122, 33, 0.1);
+        }
+
+        .neon-border-cyan:hover {
+            border-color: rgba(0, 242, 255, 0.6);
+            box-shadow: 0 0 20px rgba(0, 242, 255, 0.1);
+        }
+
+        #tubes-canvas {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: auto;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0a0a0a; }
+        ::-webkit-scrollbar-thumb {
+            background: #222;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover { background: #333; }
+
+        input, select, textarea {
+            background: rgba(255, 255, 255, 0.03) !important;
+            border: 1px solid rgba(255, 255, 255, 0.1) !important;
+            color: #fff !important;
+            transition: all 0.3s ease;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            border-color: var(--accent-cyan) !important;
+            outline: none !important;
+            box-shadow: 0 0 15px rgba(0, 242, 255, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="page-wrap">
+        <nav class="fixed top-0 left-0 w-full z-50 px-6 py-4 md:px-12 flex justify-between items-center bg-black/80 backdrop-blur-md border-b border-white/5">
+            <a href="#" id="nav-logo-link" class="flex items-center gap-2">
+                <img src="https://vgbujcuwptvheqijyjbe.supabase.co/storage/v1/object/public/hmac-uploads/uploads/d4c3a896-311d-47cb-8163-c5b2b81f9d9b/1783759215115-5d44e9e2/Updated_Logo_-_Without_BG.PNG" alt="A-Tek Services Logo" class="h-16 md:h-20 w-auto object-contain">
+            </a>
+
+            <div class="hidden md:flex items-center gap-8 text-sm font-medium uppercase tracking-widest">
+                <a href="#" id="nav-home-link" class="hover:text-cyan-400 transition-colors">Home</a>
+                <a href="https://p.superdesign.dev/draft/6081443a-c4d6-4b3a-87c0-adc50a8578c3" id="nav-services-page-link" class="hover:text-cyan-400 transition-colors">Services</a>
+                <a href="#pricing" id="nav-pricing-link" class="hover:text-cyan-400 transition-colors">Pricing</a>
+                <a href="#faq" id="nav-faq-link" class="hover:text-cyan-400 transition-colors">FAQ</a>
+                <a href="#contact" id="nav-contact-btn" class="px-6 py-2 border border-white/20 rounded-full hover:bg-white hover:text-black transition-all duration-300">Contact Us</a>
+            </div>
+        </nav>
+
+        <main>
+            <section class="relative h-screen w-full flex items-center justify-center overflow-hidden">
+                <canvas id="tubes-canvas"></canvas>
+
+                <div class="relative z-10 container mx-auto px-6 text-center pointer-events-none select-none">
+                    <div class="mb-6 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.28em] text-white/70 pointer-events-auto">
+                        <span class="h-2 w-2 rounded-full bg-[#00f2ff]"></span>
+                        <span>Welcome to A-Tek</span>
+                        <a href="https://p.superdesign.dev/draft/6081443a-c4d6-4b3a-87c0-adc50a8578c3" id="hero-services-page-link" class="inline-flex items-center gap-1 text-[#00f2ff] transition-colors hover:text-white">
+                            Explore our complete services offering
+                            <iconify-icon icon="lucide:arrow-right" class="text-sm"></iconify-icon>
+                        </a>
+                    </div>
+
+                    <div class="space-y-4 mb-12 animate-float">
+                        <h1 class="text-5xl md:text-7xl font-black leading-none tracking-tighter uppercase text-white">
+                            A-TEK<br>
+                            <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#F27A21] via-[#00f2ff] to-[#34C1ED]">SERVICES</span>
+                        </h1>
+                        <p class="text-base md:text-xl text-white/70 max-w-2xl mx-auto font-medium tracking-tight mt-6">
+                            Scaling businesses with intelligent automation and cutting-edge digital dynamics.
+                        </p>
+                    </div>
+
+                    <div class="flex flex-col md:flex-row items-center justify-center gap-4 pointer-events-auto">
+                        <a href="#contact" id="cta-get-started-btn" class="group relative px-8 md:px-10 py-4 md:py-5 bg-white text-black font-bold uppercase tracking-widest rounded-full overflow-hidden transition-all duration-500 hover:scale-105 active:scale-95">
+                            <span class="relative z-10">Get Started</span>
+                        </a>
+                        <button id="randomize-trigger" class="px-8 md:px-10 py-4 md:py-5 border border-white/20 hover:border-white/50 bg-white/5 backdrop-blur-md text-white font-bold uppercase tracking-widest rounded-full transition-all duration-300">
+                            Randomize Energy
+                        </button>
+                    </div>
+
+                    <div class="absolute bottom-8 md:bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4 text-white/40 animate-bounce">
+                        <iconify-icon icon="lucide:mouse-pointer-2" class="text-2xl"></iconify-icon>
+                        <span class="text-[10px] uppercase tracking-[0.3em]">Move to interact</span>
+                    </div>
+                </div>
+            </section>
+
+            <section id="services" class="relative z-20 py-20 md:py-32 bg-black">
+                <div class="container mx-auto px-6">
+                    <div class="text-center mb-12">
+                        <span class="text-sm uppercase tracking-[0.4em] text-cyan-400 mb-4 block">Solutions</span>
+                        <h2 class="text-4xl md:text-5xl font-black uppercase tracking-tighter">
+                            Our Services
+                            <a href="https://p.superdesign.dev/draft/6081443a-c4d6-4b3a-87c0-adc50a8578c3" id="services-full-page-link" class="ml-2 inline-flex items-center gap-1 text-sm uppercase tracking-[0.25em] text-[#00f2ff] transition-colors hover:text-white">
+                                View Full Services Page →
+                            </a>
+                        </h2>
+                    </div>
+
+                    <div class="mx-auto mb-10 flex w-full max-w-4xl flex-wrap justify-center gap-3 rounded-full border border-white/10 bg-white/5 p-2">
+                        <button type="button" id="build-tab-btn" class="service-tab-btn rounded-full px-5 py-3 text-xs font-bold uppercase tracking-[0.22em] text-white bg-white/10 transition-all duration-300" data-target="build-tab-panel" aria-selected="true">
+                            Build — Websites, Apps, and Software Products
+                        </button>
+                        <button type="button" id="automation-tab-btn" class="service-tab-btn rounded-full px-5 py-3 text-xs font-bold uppercase tracking-[0.22em] text-white/60 transition-all duration-300 hover:text-white" data-target="automation-tab-panel" aria-selected="false">
+                            AI &amp; Automation — Intelligence layered on top of your business
+                        </button>
+                    </div>
+
+                    <div id="build-tab-panel" class="service-panel grid grid-cols-1 gap-8 opacity-100 transition-all duration-500 md:grid-cols-2 lg:grid-cols-3">
+                        <div class="glass p-10 rounded-[2.5rem] transition-all duration-500 hover:neon-border-orange group">
+                            <div class="w-16 h-16 rounded-2xl bg-[#F27A21]/20 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-500">
+                                <iconify-icon icon="lucide:globe" class="text-[#F27A21] text-3xl"></iconify-icon>
+                            </div>
+                            <h3 class="text-xl font-bold uppercase mb-4 tracking-tight">Web Development</h3>
+                            <p class="text-white/40 leading-relaxed">Your website is often the first place a customer meets your business. We build fast, modern sites that work on every device, rank well on search engines, and make it easy for visitors to take the next step.</p>
+                        </div>
+                        <div class="glass p-10 rounded-[2.5rem] transition-all duration-500 hover:neon-border-orange group">
+                            <div class="w-16 h-16 rounded-2xl bg-[#F27A21]/20 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-500">
+                                <iconify-icon icon="lucide:smartphone" class="text-[#F27A21] text-3xl"></iconify-icon>
+                            </div>
+                            <h3 class="text-xl font-bold uppercase mb-4 tracking-tight">App Development</h3>
+                            <p class="text-white/40 leading-relaxed">Off-the-shelf software rarely fits how a business actually works. We design and build custom mobile and web apps around your workflow so your team works the way it needs to.</p>
+                        </div>
+                        <div class="glass p-10 rounded-[2.5rem] transition-all duration-500 hover:neon-border-orange group md:col-span-2 lg:col-span-1">
+                            <div class="w-16 h-16 rounded-2xl bg-[#F27A21]/20 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-500">
+                                <iconify-icon icon="lucide:layout-grid" class="text-[#F27A21] text-3xl"></iconify-icon>
+                            </div>
+                            <h3 class="text-xl font-bold uppercase mb-4 tracking-tight">Custom SaaS Development</h3>
+                            <p class="text-white/40 leading-relaxed">If you have a product idea that goes beyond a website, we'll build it. Your brand, your features, hosted on the cloud and designed to grow with your user base.</p>
+                        </div>
+                    </div>
+
+                    <div id="automation-tab-panel" class="service-panel hidden grid-cols-1 gap-8 opacity-0 transition-all duration-500 md:grid-cols-2 lg:grid-cols-3">
+                        <div class="glass p-10 rounded-[2.5rem] transition-all duration-500 hover:neon-border-cyan group">
+                            <div class="w-16 h-16 rounded-2xl bg-[#00f2ff]/20 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-500">
+                                <iconify-icon icon="lucide:cpu" class="text-cyan-400 text-3xl"></iconify-icon>
+                            </div>
+                            <h3 class="text-xl font-bold uppercase mb-4 tracking-tight">AI Chatbot Integration</h3>
+                            <p class="text-white/40 leading-relaxed">Custom intelligence built for your business. We create practical AI capabilities that support decisions, automate analysis, and fit into your existing operations.</p>
+                        </div>
+                        <div class="glass p-10 rounded-[2.5rem] transition-all duration-500 hover:neon-border-cyan group">
+                            <div class="w-16 h-16 rounded-2xl bg-[#00f2ff]/20 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-500">
+                                <iconify-icon icon="lucide:bot" class="text-cyan-400 text-3xl"></iconify-icon>
+                            </div>
+                            <h3 class="text-xl font-bold uppercase mb-4 tracking-tight">Chatbot Integration</h3>
+                            <p class="text-white/40 leading-relaxed">Intelligent conversational interfaces that automate lead gen and support, while staying connected to your real business knowledge.</p>
+                        </div>
+                        <div class="glass p-10 rounded-[2.5rem] transition-all duration-500 hover:neon-border-cyan group">
+                            <div class="w-16 h-16 rounded-2xl bg-[#00f2ff]/20 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-500">
+                                <iconify-icon icon="lucide:mic" class="text-cyan-400 text-3xl"></iconify-icon>
+                            </div>
+                            <h3 class="text-xl font-bold uppercase mb-4 tracking-tight">AI Voice Agent</h3>
+                            <p class="text-white/40 leading-relaxed">Voice-powered AI assistants that handle inquiries with natural processing, helping you respond faster and scale support without adding headcount.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="pricing" class="relative z-20 py-20 md:py-32 bg-[#050505]">
+                <div class="container mx-auto px-6">
+                    <div class="text-center mb-16">
+                        <span class="text-sm uppercase tracking-[0.4em] text-[#F27A21] mb-4 block">Investment</span>
+                        <h2 class="text-4xl md:text-5xl font-black uppercase tracking-tighter">Pricing Models</h2>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <div class="glass p-10 rounded-[2.5rem] border-white/5 flex flex-col hover:neon-border-cyan transition-all">
+                            <h3 class="text-xl font-bold uppercase tracking-widest text-[#F27A21] mb-2">Starter</h3>
+                            <ul class="space-y-4 mb-10 flex-grow">
+                                <li class="flex items-start gap-3 text-white/60 text-sm"><iconify-icon icon="lucide:check" class="text-[#F27A21]"></iconify-icon><span>Web Development (UI/UX Design)</span></li>
+                                <li class="flex items-start gap-3 text-white/60 text-sm"><iconify-icon icon="lucide:check" class="text-[#F27A21]"></iconify-icon><span>Web Domain</span></li>
+                                <li class="flex items-start gap-3 text-white/60 text-sm"><iconify-icon icon="lucide:check" class="text-[#F27A21]"></iconify-icon><span>Web Hosting</span></li>
+                                <li class="flex items-start gap-3 text-white/60 text-sm"><iconify-icon icon="lucide:check" class="text-[#F27A21]"></iconify-icon><span>Basic Chatbot Integration</span></li>
+                                <li class="flex items-start gap-3 text-white/60 text-sm"><iconify-icon icon="lucide:check" class="text-[#F27A21]"></iconify-icon><span>3 Month Service Included</span></li>
+                                <li class="flex items-start gap-3 text-white/60 text-sm"><iconify-icon icon="lucide:check" class="text-[#F27A21]"></iconify-icon><span>24/7 Email Support</span></li>
+                            </ul>
+                            <a href="#contact" id="price-starter-btn" class="w-full py-4 border border-white/10 rounded-full text-center text-sm font-bold uppercase tracking-widest hover:bg-white/5 transition-colors">Get Started</a>
+                        </div>
+
+                        <div class="glass p-10 rounded-[2.5rem] border-[#F27A21]/50 relative flex flex-col z-10 neon-border-orange bg-[#F27A21]/5">
+                            <div class="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-[#F27A21] text-black text-[10px] font-black uppercase tracking-[0.2em] rounded-full">Recommended</div>
+                            <h3 class="text-xl font-bold uppercase tracking-widest text-[#F27A21] mb-2">Professional</h3>
+                            <ul class="space-y-4 mb-10 flex-grow">
+                                <li class="flex items-start gap-3 text-white/60 text-sm"><iconify-icon icon="lucide:check" class="text-[#F27A21]"></iconify-icon><span>Web Development (UI/UX Design)</span></li>
+                                <li class="flex items-start gap-3 text-white/60 text-sm"><iconify-icon icon="lucide:check" class="text-[#F27A21]"></iconify-icon><span>Web Domain</span></li>
+                                <li class="flex items-start gap-3 text-white/60 text-sm"><iconify-icon icon="lucide:check" class="text-[#F27A21]"></iconify-icon><span>Web Hosting</span></li>
+                                <li class="flex items-start gap-3 text-white/60 text-sm"><iconify-icon icon="lucide:check" class="text-[#F27A21]"></iconify-icon><span>Basic Chatbot Integration</span></li>
+                                <li class="flex items-start gap-3 text-white/60 text-sm"><iconify-icon icon="lucide:check" class="text-[#F27A21]"></iconify-icon><span>AI &amp; Automation</span></li>
+                                <li class="flex items-start gap-3 text-white/60 text-sm"><iconify-icon icon="lucide:check" class="text-[#F27A21]"></iconify-icon><span>Social Media Platform Integration</span></li>
+                                <li class="flex items-start gap-3 text-white/60 text-sm"><iconify-icon icon="lucide:check" class="text-[#F27A21]"></iconify-icon><span>CRM Connectivity</span></li>
+                                <li class="flex items-start gap-3 text-white/60 text-sm"><iconify-icon icon="lucide:check" class="text-[#F27A21]"></iconify-icon><span>6 Month Service Included</span></li>
+                                <li class="flex items-start gap-3 text-white/60 text-sm"><iconify-icon icon="lucide:check" class="text-[#F27A21]"></iconify-icon><span>Priority 24/7 Support</span></li>
+                            </ul>
+                            <a href="#contact" id="price-prof-btn" class="w-full py-4 bg-[#F27A21] text-black rounded-full text-center text-sm font-bold uppercase tracking-widest hover:brightness-110 transition-all">Select Plan</a>
+                        </div>
+
+                        <div class="glass p-10 rounded-[2.5rem] border-white/5 flex flex-col hover:neon-border-cyan transition-all">
+                            <h3 class="text-xl font-bold uppercase tracking-widest text-[#00f2ff] mb-2">Enterprise</h3>
+                            <ul class="space-y-4 mb-10 flex-grow">
+                                <li class="flex items-start gap-3 text-white/60 text-sm"><iconify-icon icon="lucide:check" class="text-[#00f2ff]"></iconify-icon><span>Custom Development</span></li>
+                                <li class="flex items-start gap-3 text-white/60 text-sm"><iconify-icon icon="lucide:check" class="text-[#00f2ff]"></iconify-icon><span>Priority 24/7 Support</span></li>
+                                <li class="flex items-start gap-3 text-white/60 text-sm"><iconify-icon icon="lucide:check" class="text-[#00f2ff]"></iconify-icon><span>Connect team for full inquiry</span></li>
+                            </ul>
+                            <a href="#contact" id="price-ent-btn" class="w-full py-4 border border-white/10 rounded-full text-center text-sm font-bold uppercase tracking-widest hover:bg-white/5 transition-colors">Contact Sales</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="faq" class="relative z-20 py-20 md:py-32 bg-black">
+                <div class="container mx-auto px-6">
+                    <div class="text-center mb-16">
+                        <h2 class="text-4xl md:text-5xl font-black uppercase tracking-tighter">Our FAQ</h2>
+                    </div>
+                    <div class="max-w-4xl mx-auto space-y-4">
+                        <div class="faq-item glass rounded-2xl border-white/5 overflow-hidden transition-all">
+                            <button class="faq-trigger w-full px-8 py-6 flex items-center justify-between text-left group">
+                                <span class="text-lg font-bold">What services does A-Tek provide?</span>
+                                <iconify-icon icon="lucide:chevron-down" class="faq-icon transition-transform duration-300"></iconify-icon>
+                            </button>
+                            <div class="faq-content max-h-0 overflow-hidden transition-all duration-300">
+                                <p class="px-8 pb-6 text-white/50">We specialize in Web Development, Mobile Apps, AI Agents, Chatbots, and custom Enterprise software solutions.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item glass rounded-2xl border-white/5 overflow-hidden transition-all">
+                            <button class="faq-trigger w-full px-8 py-6 flex items-center justify-between text-left group">
+                                <span class="text-lg font-bold">How can AI improve my business?</span>
+                                <iconify-icon icon="lucide:chevron-down" class="faq-icon transition-transform duration-300"></iconify-icon>
+                            </button>
+                            <div class="faq-content max-h-0 overflow-hidden transition-all duration-300">
+                                <p class="px-8 pb-6 text-white/50">AI automates repetitive tasks, provides 24/7 customer support, and generates data-driven insights to optimize your growth strategy.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item glass rounded-2xl border-white/5 overflow-hidden transition-all">
+                            <button class="faq-trigger w-full px-8 py-6 flex items-center justify-between text-left group">
+                                <span class="text-lg font-bold">Can you integrate with my existing tech?</span>
+                                <iconify-icon icon="lucide:chevron-down" class="faq-icon transition-transform duration-300"></iconify-icon>
+                            </button>
+                            <div class="faq-content max-h-0 overflow-hidden transition-all duration-300">
+                                <p class="px-8 pb-6 text-white/50">Yes, our systems are designed to be API-first and plug directly into CRM, ERP, and messaging platforms like Slack or WhatsApp.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item glass rounded-2xl border-white/5 overflow-hidden transition-all">
+                            <button class="faq-trigger w-full px-8 py-6 flex items-center justify-between text-left group">
+                                <span class="text-lg font-bold">What is the typical project timeline?</span>
+                                <iconify-icon icon="lucide:chevron-down" class="faq-icon transition-transform duration-300"></iconify-icon>
+                            </button>
+                            <div class="faq-content max-h-0 overflow-hidden transition-all duration-300">
+                                <p class="px-8 pb-6 text-white/50">Typical projects range from 2 weeks for landing pages to 3-6 months for complex enterprise SaaS applications.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item glass rounded-2xl border-white/5 overflow-hidden transition-all">
+                            <button class="faq-trigger w-full px-8 py-6 flex items-center justify-between text-left group">
+                                <span class="text-lg font-bold">Do you offer post-launch support?</span>
+                                <iconify-icon icon="lucide:chevron-down" class="faq-icon transition-transform duration-300"></iconify-icon>
+                            </button>
+                            <div class="faq-content max-h-0 overflow-hidden transition-all duration-300">
+                                <p class="px-8 pb-6 text-white/50">Absolutely. We offer ongoing maintenance and retainer packages to ensure your systems scale with your business.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="contact" class="relative z-20 py-20 md:py-32 bg-black px-6">
+                <div class="container mx-auto max-w-4xl">
+                    <div class="glass p-8 md:p-16 rounded-[3rem] neon-border-cyan">
+                        <div class="mb-12">
+                            <h2 class="text-4xl md:text-5xl font-black uppercase tracking-tighter mb-4">Launch Your Project</h2>
+                            <p class="text-white/50">Fill out the form below and our strategists will reach out within 24 hours.</p>
+                        </div>
+                        <form class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <div class="space-y-2">
+                                <label class="text-[10px] uppercase tracking-widest text-cyan-400 font-bold">Name</label>
+                                <input type="text" placeholder="Enter your name" class="w-full px-6 py-4 rounded-xl">
+                            </div>
+                            <div class="space-y-2">
+                                <label class="text-[10px] uppercase tracking-widest text-cyan-400 font-bold">Email</label>
+                                <input type="email" placeholder="xyz@company.com" class="w-full px-6 py-4 rounded-xl">
+                            </div>
+                            <div class="space-y-2 md:col-span-2">
+                                <label class="text-[10px] uppercase tracking-widest text-cyan-400 font-bold">Company</label>
+                                <input type="text" placeholder="Your company name" class="w-full px-6 py-4 rounded-xl">
+                            </div>
+                            <div class="space-y-2">
+                                <label class="text-[10px] uppercase tracking-widest text-cyan-400 font-bold">Project Type</label>
+                                <select class="w-full px-6 py-4 rounded-xl appearance-none">
+                                    <option>Web Development</option>
+                                    <option>AI Integration</option>
+                                    <option>App Development</option>
+                                    <option>SaaS Custom</option>
+                                </select>
+                            </div>
+                            <div class="space-y-2">
+                                <label class="text-[10px] uppercase tracking-widest text-cyan-400 font-bold">Budget Range</label>
+                                <select class="w-full px-6 py-4 rounded-xl appearance-none">
+                                    <option>$5,000 - $10,000</option>
+                                    <option>$10,000 - $50,000</option>
+                                    <option>$50,000+</option>
+                                </select>
+                            </div>
+                            <div class="space-y-2 md:col-span-2">
+                                <label class="text-[10px] uppercase tracking-widest text-cyan-400 font-bold">Project Details</label>
+                                <textarea rows="4" placeholder="Tell us about your vision..." class="w-full px-6 py-4 rounded-xl resize-none"></textarea>
+                            </div>
+                            <div class="md:col-span-2 pt-4">
+                                <button type="submit" id="form-submit-btn" class="w-full py-5 bg-gradient-to-r from-[#00f2ff] to-[#F27A21] text-black font-black uppercase tracking-[0.2em] rounded-xl hover:scale-[1.02] transition-transform">
+                                    Transmit Data
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="py-12 px-6 border-t border-white/10 bg-black">
+            <div class="container mx-auto max-w-4xl text-center">
+                <div class="mb-6 flex justify-center">
+                    <img src="https://vgbujcuwptvheqijyjbe.supabase.co/storage/v1/object/public/hmac-uploads/uploads/d4c3a896-311d-47cb-8163-c5b2b81f9d9b/1783759215115-5d44e9e2/Updated_Logo_-_Without_BG.PNG" alt="A-Tek Services Logo" class="h-24 md:h-28 w-auto object-contain">
+                </div>
+
+                <p class="text-white/40 text-sm leading-relaxed max-w-md mx-auto font-bold text-white">
+                    Pioneering the digital frontier through intelligent automation and adaptive neural systems.
+                    <br>
+                    <span class="text-white font-semibold">© 2024 A-TEK SERVICES. ALL RIGHTS RESERVED.</span>
+                </p>
+            </div>
+        </footer>
+    </div>
+
+    <script type="module">
+        import TubesCursor from 'https://cdn.jsdelivr.net/npm/threejs-components@0.0.19/build/cursors/tubes1.min.js';
+
+        const canvas = document.getElementById('tubes-canvas');
+        const randomBtn = document.getElementById('randomize-trigger');
+        const buildTabBtn = document.getElementById('build-tab-btn');
+        const automationTabBtn = document.getElementById('automation-tab-btn');
+        const buildTabPanel = document.getElementById('build-tab-panel');
+        const automationTabPanel = document.getElementById('automation-tab-panel');
+
+        const app = TubesCursor(canvas, {
+            tubes: {
+                colors: ['#F27A21', '#34C1ED', '#00f2ff'],
+                lights: {
+                    intensity: 150,
+                    colors: ['#F27A21', '#34C1ED', '#00f2ff', '#ffffff']
+                }
+            }
+        });
+
+        const randomHex = () => '#' + Math.floor(Math.random() * 16777215).toString(16).padStart(6, '0');
+
+        function randomize() {
+            app.tubes.setColors([randomHex(), randomHex(), randomHex()]);
+            app.tubes.setLightsColors([randomHex(), randomHex(), randomHex(), '#ffffff']);
+        }
+
+        function setActiveServicesTab(active) {
+            const isBuild = active === 'build';
+
+            buildTabBtn.classList.toggle('bg-white/10', isBuild);
+            buildTabBtn.classList.toggle('text-white', isBuild);
+            buildTabBtn.classList.toggle('text-white/60', !isBuild);
+
+            automationTabBtn.classList.toggle('bg-white/10', !isBuild);
+            automationTabBtn.classList.toggle('text-white', !isBuild);
+            automationTabBtn.classList.toggle('text-white/60', isBuild);
+
+            buildTabPanel.classList.toggle('hidden', !isBuild);
+            automationTabPanel.classList.toggle('hidden', isBuild);
+            buildTabPanel.classList.toggle('grid', isBuild);
+            automationTabPanel.classList.toggle('grid', !isBuild);
+            buildTabPanel.classList.toggle('opacity-100', isBuild);
+            automationTabPanel.classList.toggle('opacity-100', !isBuild);
+            buildTabPanel.classList.toggle('opacity-0', !isBuild);
+            automationTabPanel.classList.toggle('opacity-0', isBuild);
+
+            buildTabBtn.setAttribute('aria-selected', String(isBuild));
+            automationTabBtn.setAttribute('aria-selected', String(!isBuild));
+        }
+
+        randomBtn?.addEventListener('click', randomize);
+        canvas?.addEventListener('click', randomize);
+        buildTabBtn?.addEventListener('click', () => setActiveServicesTab('build'));
+        automationTabBtn?.addEventListener('click', () => setActiveServicesTab('automation'));
+
+        document.querySelectorAll('.faq-trigger').forEach((trigger) => {
+            trigger.addEventListener('click', () => {
+                const content = trigger.nextElementSibling;
+                const icon = trigger.querySelector('.faq-icon');
+                if (!content || !icon) return;
+
+                if (content.style.maxHeight) {
+                    content.style.maxHeight = null;
+                    icon.style.transform = 'rotate(0deg)';
+                } else {
+                    content.style.maxHeight = `${content.scrollHeight}px`;
+                    icon.style.transform = 'rotate(180deg)';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
