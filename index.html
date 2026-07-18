@@ -107,13 +107,39 @@
             outline: none !important;
             box-shadow: 0 0 15px rgba(0, 242, 255, 0.2);
         }
+
+        /* Enhanced navbar logo styling */
+        nav {
+            height: 90px;
+        }
+
+        #nav-logo-link {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #nav-logo-link img {
+            height: 85px;
+            width: auto;
+            max-width: 280px;
+            object-fit: contain;
+            transition: all 0.3s ease;
+            filter: drop-shadow(0 0 8px rgba(0, 242, 255, 0.1));
+        }
+
+        #nav-logo-link img:hover {
+            transform: scale(1.08);
+            filter: drop-shadow(0 0 12px rgba(0, 242, 255, 0.2));
+        }
     </style>
 </head>
 <body>
     <div class="page-wrap">
-        <nav class="fixed top-0 left-0 w-full z-50 px-6 py-4 md:px-12 flex justify-between items-center bg-black/80 backdrop-blur-md border-b border-white/5">
+        <nav class="fixed top-0 left-0 w-full z-50 px-6 py-0 md:px-12 flex justify-between items-center bg-black/80 backdrop-blur-md border-b border-white/5">
             <a href="#" id="nav-logo-link" class="flex items-center gap-2">
-                <img src="https://vgbujcuwptvheqijyjbe.supabase.co/storage/v1/object/public/hmac-uploads/uploads/d4c3a896-311d-47cb-8163-c5b2b81f9d9b/1783759215115-5d44e9e2/Updated_Logo_-_Without_BG.PNG" alt="A-Tek Services Logo" class="h-16 md:h-20 w-auto object-contain">
+                <img src="https://vgbujcuwptvheqijyjbe.supabase.co/storage/v1/object/public/hmac-uploads/uploads/d4c3a896-311d-47cb-8163-c5b2b81f9d9b/1783759215115-5d44e9e2/Updated_Logo_-_Without_BG.PNG" alt="A-TEK Services Logo">
             </a>
 
             <div class="hidden md:flex items-center gap-8 text-sm font-medium uppercase tracking-widest">
@@ -125,7 +151,7 @@
             </div>
         </nav>
 
-        <main>
+        <main style="margin-top: 90px;">
             <section class="relative h-screen w-full flex items-center justify-center overflow-hidden">
                 <canvas id="tubes-canvas"></canvas>
 
@@ -150,7 +176,7 @@
                     </div>
 
                     <div class="flex flex-col md:flex-row items-center justify-center gap-4 pointer-events-auto">
-                        <a href="#contact" id="cta-get-started-btn" class="group relative px-8 md:px-10 py-4 md:py-5 bg-white text-black font-bold uppercase tracking-widest rounded-full overflow-hidden transition-all duration-500 hover:scale-105 active:scale-95">
+                        <a href="#contact" id="cta-get-started-btn" class="group relative px-8 md:px-10 py-4 md:py-5 bg-white text-black font-bold uppercase tracking-widest rounded-full overflow-hidden transition-all duration-300 hover:shadow-lg hover:shadow-white/20">
                             <span class="relative z-10">Get Started</span>
                         </a>
                         <button id="randomize-trigger" class="px-8 md:px-10 py-4 md:py-5 border border-white/20 hover:border-white/50 bg-white/5 backdrop-blur-md text-white font-bold uppercase tracking-widest rounded-full transition-all duration-300">
@@ -171,17 +197,17 @@
                         <span class="text-sm uppercase tracking-[0.4em] text-cyan-400 mb-4 block">Solutions</span>
                         <h2 class="text-4xl md:text-5xl font-black uppercase tracking-tighter">
                             Our Services
-                            <a href="https://p.superdesign.dev/draft/6081443a-c4d6-4b3a-87c0-adc50a8578c3" id="services-full-page-link" class="ml-2 inline-flex items-center gap-1 text-sm uppercase tracking-[0.25em] text-[#00f2ff] transition-colors hover:text-white">
+                            <a href="https://p.superdesign.dev/draft/6081443a-c4d6-4b3a-87c0-adc50a8578c3" id="services-full-page-link" class="ml-2 inline-flex items-center gap-1 text-sm uppercase transition-colors hover:text-cyan-400">
                                 View Full Services Page →
                             </a>
                         </h2>
                     </div>
 
                     <div class="mx-auto mb-10 flex w-full max-w-4xl flex-wrap justify-center gap-3 rounded-full border border-white/10 bg-white/5 p-2">
-                        <button type="button" id="build-tab-btn" class="service-tab-btn rounded-full px-5 py-3 text-xs font-bold uppercase tracking-[0.22em] text-white bg-white/10 transition-all duration-300" data-target="build-tab-panel" aria-selected="true">
+                        <button type="button" id="build-tab-btn" class="service-tab-btn rounded-full px-5 py-3 text-xs font-bold uppercase tracking-[0.22em] text-white bg-white/10 transition-all duration-300">
                             Build — Websites, Apps, and Software Products
                         </button>
-                        <button type="button" id="automation-tab-btn" class="service-tab-btn rounded-full px-5 py-3 text-xs font-bold uppercase tracking-[0.22em] text-white/60 transition-all duration-300 hover:text-white" data-target="automation-tab-panel" aria-selected="false">
+                        <button type="button" id="automation-tab-btn" class="service-tab-btn rounded-full px-5 py-3 text-xs font-bold uppercase tracking-[0.22em] text-white/60 transition-all duration-300">
                             AI &amp; Automation — Intelligence layered on top of your business
                         </button>
                     </div>
@@ -192,21 +218,21 @@
                                 <iconify-icon icon="lucide:globe" class="text-[#F27A21] text-3xl"></iconify-icon>
                             </div>
                             <h3 class="text-xl font-bold uppercase mb-4 tracking-tight">Web Development</h3>
-                            <p class="text-white/40 leading-relaxed">Your website is often the first place a customer meets your business. We build fast, modern sites that work on every device, rank well on search engines, and make it easy for visitors to take the next step.</p>
+                            <p class="text-white/40 leading-relaxed">Your website is often the first place a customer meets your business. We build fast, modern sites that work on every device, rank well in search, and convert visitors into customers.</p>
                         </div>
                         <div class="glass p-10 rounded-[2.5rem] transition-all duration-500 hover:neon-border-orange group">
                             <div class="w-16 h-16 rounded-2xl bg-[#F27A21]/20 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-500">
                                 <iconify-icon icon="lucide:smartphone" class="text-[#F27A21] text-3xl"></iconify-icon>
                             </div>
                             <h3 class="text-xl font-bold uppercase mb-4 tracking-tight">App Development</h3>
-                            <p class="text-white/40 leading-relaxed">Off-the-shelf software rarely fits how a business actually works. We design and build custom mobile and web apps around your workflow so your team works the way it needs to.</p>
+                            <p class="text-white/40 leading-relaxed">Off-the-shelf software rarely fits how a business actually works. We design and build custom mobile and web apps around your workflow.</p>
                         </div>
                         <div class="glass p-10 rounded-[2.5rem] transition-all duration-500 hover:neon-border-orange group md:col-span-2 lg:col-span-1">
                             <div class="w-16 h-16 rounded-2xl bg-[#F27A21]/20 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-500">
                                 <iconify-icon icon="lucide:layout-grid" class="text-[#F27A21] text-3xl"></iconify-icon>
                             </div>
                             <h3 class="text-xl font-bold uppercase mb-4 tracking-tight">Custom SaaS Development</h3>
-                            <p class="text-white/40 leading-relaxed">If you have a product idea that goes beyond a website, we'll build it. Your brand, your features, hosted on the cloud and designed to grow with your user base.</p>
+                            <p class="text-white/40 leading-relaxed">If you have a product idea that goes beyond a website, we'll build it. Your brand, your features, hosted on the cloud and designed for scale.</p>
                         </div>
                     </div>
 
@@ -216,7 +242,7 @@
                                 <iconify-icon icon="lucide:cpu" class="text-cyan-400 text-3xl"></iconify-icon>
                             </div>
                             <h3 class="text-xl font-bold uppercase mb-4 tracking-tight">AI Chatbot Integration</h3>
-                            <p class="text-white/40 leading-relaxed">Custom intelligence built for your business. We create practical AI capabilities that support decisions, automate analysis, and fit into your existing operations.</p>
+                            <p class="text-white/40 leading-relaxed">Custom intelligence built for your business. We create practical AI capabilities that support decisions, automate analysis, and fit your exact needs.</p>
                         </div>
                         <div class="glass p-10 rounded-[2.5rem] transition-all duration-500 hover:neon-border-cyan group">
                             <div class="w-16 h-16 rounded-2xl bg-[#00f2ff]/20 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-500">
@@ -253,7 +279,9 @@
                                 <li class="flex items-start gap-3 text-white/60 text-sm"><iconify-icon icon="lucide:check" class="text-[#F27A21]"></iconify-icon><span>3 Month Service Included</span></li>
                                 <li class="flex items-start gap-3 text-white/60 text-sm"><iconify-icon icon="lucide:check" class="text-[#F27A21]"></iconify-icon><span>24/7 Email Support</span></li>
                             </ul>
-                            <a href="#contact" id="price-starter-btn" class="w-full py-4 border border-white/10 rounded-full text-center text-sm font-bold uppercase tracking-widest hover:bg-white/5 transition-colors">Get Started</a>
+                            <a href="#contact" id="price-starter-btn" class="w-full py-4 border border-white/10 rounded-full text-center text-sm font-bold uppercase tracking-widest hover:bg-white/5 transition-all">
+                                Get Started
+                            </a>
                         </div>
 
                         <div class="glass p-10 rounded-[2.5rem] border-[#F27A21]/50 relative flex flex-col z-10 neon-border-orange bg-[#F27A21]/5">
@@ -270,7 +298,9 @@
                                 <li class="flex items-start gap-3 text-white/60 text-sm"><iconify-icon icon="lucide:check" class="text-[#F27A21]"></iconify-icon><span>6 Month Service Included</span></li>
                                 <li class="flex items-start gap-3 text-white/60 text-sm"><iconify-icon icon="lucide:check" class="text-[#F27A21]"></iconify-icon><span>Priority 24/7 Support</span></li>
                             </ul>
-                            <a href="#contact" id="price-prof-btn" class="w-full py-4 bg-[#F27A21] text-black rounded-full text-center text-sm font-bold uppercase tracking-widest hover:brightness-110 transition-all">Select Plan</a>
+                            <a href="#contact" id="price-prof-btn" class="w-full py-4 bg-[#F27A21] text-black rounded-full text-center text-sm font-bold uppercase tracking-widest hover:brightness-110 transition-all">
+                                Get Started
+                            </a>
                         </div>
 
                         <div class="glass p-10 rounded-[2.5rem] border-white/5 flex flex-col hover:neon-border-cyan transition-all">
@@ -280,7 +310,9 @@
                                 <li class="flex items-start gap-3 text-white/60 text-sm"><iconify-icon icon="lucide:check" class="text-[#00f2ff]"></iconify-icon><span>Priority 24/7 Support</span></li>
                                 <li class="flex items-start gap-3 text-white/60 text-sm"><iconify-icon icon="lucide:check" class="text-[#00f2ff]"></iconify-icon><span>Connect team for full inquiry</span></li>
                             </ul>
-                            <a href="#contact" id="price-ent-btn" class="w-full py-4 border border-white/10 rounded-full text-center text-sm font-bold uppercase tracking-widest hover:bg-white/5 transition-colors">Contact Sales</a>
+                            <a href="#contact" id="price-ent-btn" class="w-full py-4 border border-white/10 rounded-full text-center text-sm font-bold uppercase tracking-widest hover:bg-white/5 transition-all">
+                                Get Started
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -383,7 +415,7 @@
                                 <textarea rows="4" placeholder="Tell us about your vision..." class="w-full px-6 py-4 rounded-xl resize-none"></textarea>
                             </div>
                             <div class="md:col-span-2 pt-4">
-                                <button type="submit" id="form-submit-btn" class="w-full py-5 bg-gradient-to-r from-[#00f2ff] to-[#F27A21] text-black font-black uppercase tracking-[0.2em] rounded-xl hover:scale-[1.02] transition-transform">
+                                <button type="submit" id="form-submit-btn" class="w-full py-5 bg-gradient-to-r from-[#00f2ff] to-[#F27A21] text-black font-black uppercase tracking-[0.2em] rounded-xl hover:shadow-lg hover:shadow-cyan-500/30 transition-all duration-300">
                                     Transmit Data
                                 </button>
                             </div>
@@ -396,7 +428,7 @@
         <footer class="py-12 px-6 border-t border-white/10 bg-black">
             <div class="container mx-auto max-w-4xl text-center">
                 <div class="mb-6 flex justify-center">
-                    <img src="https://vgbujcuwptvheqijyjbe.supabase.co/storage/v1/object/public/hmac-uploads/uploads/d4c3a896-311d-47cb-8163-c5b2b81f9d9b/1783759215115-5d44e9e2/Updated_Logo_-_Without_BG.PNG" alt="A-Tek Services Logo" class="h-24 md:h-28 w-auto object-contain">
+                    <img src="https://vgbujcuwptvheqijyjbe.supabase.co/storage/v1/object/public/hmac-uploads/uploads/d4c3a896-311d-47cb-8163-c5b2b81f9d9b/1783759215115-5d44e9e2/Updated_Logo_-_Without_BG.PNG" alt="A-TEK Services Logo Footer" style="height: 60px; width: auto; object-fit: contain;">
                 </div>
 
                 <p class="text-white/40 text-sm leading-relaxed max-w-md mx-auto font-bold text-white">
