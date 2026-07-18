@@ -108,6 +108,20 @@
             box-shadow: 0 0 15px rgba(0, 242, 255, 0.2);
         }
 
+        select {
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2300f2ff' stroke-width='2'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e") !important;
+            background-repeat: no-repeat !important;
+            background-position: right 1rem center !important;
+            background-size: 1.5em 1.5em !important;
+            padding-right: 2.5rem !important;
+            appearance: none !important;
+        }
+
+        select option {
+            background-color: #1a1a1a;
+            color: #fff;
+        }
+
         /* Enhanced navbar logo styling */
         nav {
             height: 90px;
@@ -139,7 +153,7 @@
     <div class="page-wrap">
         <nav class="fixed top-0 left-0 w-full z-50 px-6 py-0 md:px-12 flex justify-between items-center bg-black/80 backdrop-blur-md border-b border-white/5">
             <a href="#" id="nav-logo-link" class="flex items-center gap-2">
-                <img src="https://vgbujcuwptvheqijyjbe.supabase.co/storage/v1/object/public/hmac-uploads/uploads/d4c3a896-311d-47cb-8163-c5b2b81f9d9b/1783759215115-5d44e9e2/Updated_Logo_-_Without_BG.PNG" alt="A-TEK Services Logo">
+                <img src="https://vgbujcuwptvheqijyjbe.supabase.co/storage/v1/object/public/hmac-uploads/uploads/d4c3a896-311d-47cb-8163-c5b2b81f9d9b/1783759215115-5d44e9e2/Updated_Logo_-_Without[...]
             </a>
 
             <div class="hidden md:flex items-center gap-8 text-sm font-medium uppercase tracking-widest">
@@ -156,10 +170,10 @@
                 <canvas id="tubes-canvas"></canvas>
 
                 <div class="relative z-10 container mx-auto px-6 text-center pointer-events-none select-none">
-                    <div class="mb-6 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.28em] text-white/70 pointer-events-auto">
+                    <div class="mb-6 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.28em] text-white/70 po[...]
                         <span class="h-2 w-2 rounded-full bg-[#00f2ff]"></span>
                         <span>Welcome to A-Tek</span>
-                        <a href="https://p.superdesign.dev/draft/6081443a-c4d6-4b3a-87c0-adc50a8578c3" id="hero-services-page-link" class="inline-flex items-center gap-1 text-[#00f2ff] transition-colors hover:text-white">
+                        <a href="https://p.superdesign.dev/draft/6081443a-c4d6-4b3a-87c0-adc50a8578c3" id="hero-services-page-link" class="inline-flex items-center gap-1 text-[#00f2ff] transition[...]
                             Explore our complete services offering
                             <iconify-icon icon="lucide:arrow-right" class="text-sm"></iconify-icon>
                         </a>
@@ -176,10 +190,10 @@
                     </div>
 
                     <div class="flex flex-col md:flex-row items-center justify-center gap-4 pointer-events-auto">
-                        <a href="#contact" id="cta-get-started-btn" class="group relative px-8 md:px-10 py-4 md:py-5 bg-white text-black font-bold uppercase tracking-widest rounded-full overflow-hidden transition-all duration-300 hover:shadow-lg hover:shadow-white/20">
+                        <a href="#contact" id="cta-get-started-btn" class="group relative px-8 md:px-10 py-4 md:py-5 bg-white text-black font-bold uppercase tracking-widest rounded-full overflow-[...]
                             <span class="relative z-10">Get Started</span>
                         </a>
-                        <button id="randomize-trigger" class="px-8 md:px-10 py-4 md:py-5 border border-white/20 hover:border-white/50 bg-white/5 backdrop-blur-md text-white font-bold uppercase tracking-widest rounded-full transition-all duration-300">
+                        <button id="randomize-trigger" class="px-8 md:px-10 py-4 md:py-5 border border-white/20 hover:border-white/50 bg-white/5 backdrop-blur-md text-white font-bold uppercase tr[...]
                             Randomize Energy
                         </button>
                     </div>
@@ -197,17 +211,17 @@
                         <span class="text-sm uppercase tracking-[0.4em] text-cyan-400 mb-4 block">Solutions</span>
                         <h2 class="text-4xl md:text-5xl font-black uppercase tracking-tighter">
                             Our Services
-                            <a href="https://p.superdesign.dev/draft/6081443a-c4d6-4b3a-87c0-adc50a8578c3" id="services-full-page-link" class="ml-2 inline-flex items-center gap-1 text-sm uppercase transition-colors hover:text-cyan-400">
+                            <a href="https://p.superdesign.dev/draft/6081443a-c4d6-4b3a-87c0-adc50a8578c3" id="services-full-page-link" class="ml-2 inline-flex items-center gap-1 text-sm uppercas[...]
                                 View Full Services Page →
                             </a>
                         </h2>
                     </div>
 
                     <div class="mx-auto mb-10 flex w-full max-w-4xl flex-wrap justify-center gap-3 rounded-full border border-white/10 bg-white/5 p-2">
-                        <button type="button" id="build-tab-btn" class="service-tab-btn rounded-full px-5 py-3 text-xs font-bold uppercase tracking-[0.22em] text-white bg-white/10 transition-all duration-300">
+                        <button type="button" id="build-tab-btn" class="service-tab-btn rounded-full px-5 py-3 text-xs font-bold uppercase tracking-[0.22em] text-white bg-white/10 transition-all [...]
                             Build — Websites, Apps, and Software Products
                         </button>
-                        <button type="button" id="automation-tab-btn" class="service-tab-btn rounded-full px-5 py-3 text-xs font-bold uppercase tracking-[0.22em] text-white/60 transition-all duration-300">
+                        <button type="button" id="automation-tab-btn" class="service-tab-btn rounded-full px-5 py-3 text-xs font-bold uppercase tracking-[0.22em] text-white/60 transition-all dura[...]
                             AI &amp; Automation — Intelligence layered on top of your business
                         </button>
                     </div>
@@ -218,21 +232,21 @@
                                 <iconify-icon icon="lucide:globe" class="text-[#F27A21] text-3xl"></iconify-icon>
                             </div>
                             <h3 class="text-xl font-bold uppercase mb-4 tracking-tight">Web Development</h3>
-                            <p class="text-white/40 leading-relaxed">Your website is often the first place a customer meets your business. We build fast, modern sites that work on every device, rank well in search, and convert visitors into customers.</p>
+                            <p class="text-white/40 leading-relaxed">Your website is often the first place a customer meets your business. We build fast, modern sites that work on every device, r[...]
                         </div>
                         <div class="glass p-10 rounded-[2.5rem] transition-all duration-500 hover:neon-border-orange group">
                             <div class="w-16 h-16 rounded-2xl bg-[#F27A21]/20 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-500">
                                 <iconify-icon icon="lucide:smartphone" class="text-[#F27A21] text-3xl"></iconify-icon>
                             </div>
                             <h3 class="text-xl font-bold uppercase mb-4 tracking-tight">App Development</h3>
-                            <p class="text-white/40 leading-relaxed">Off-the-shelf software rarely fits how a business actually works. We design and build custom mobile and web apps around your workflow.</p>
+                            <p class="text-white/40 leading-relaxed">Off-the-shelf software rarely fits how a business actually works. We design and build custom mobile and web apps around your w[...]
                         </div>
                         <div class="glass p-10 rounded-[2.5rem] transition-all duration-500 hover:neon-border-orange group md:col-span-2 lg:col-span-1">
                             <div class="w-16 h-16 rounded-2xl bg-[#F27A21]/20 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-500">
                                 <iconify-icon icon="lucide:layout-grid" class="text-[#F27A21] text-3xl"></iconify-icon>
                             </div>
                             <h3 class="text-xl font-bold uppercase mb-4 tracking-tight">Custom SaaS Development</h3>
-                            <p class="text-white/40 leading-relaxed">If you have a product idea that goes beyond a website, we'll build it. Your brand, your features, hosted on the cloud and designed for scale.</p>
+                            <p class="text-white/40 leading-relaxed">If you have a product idea that goes beyond a website, we'll build it. Your brand, your features, hosted on the cloud and desi[...]
                         </div>
                     </div>
 
@@ -242,21 +256,21 @@
                                 <iconify-icon icon="lucide:cpu" class="text-cyan-400 text-3xl"></iconify-icon>
                             </div>
                             <h3 class="text-xl font-bold uppercase mb-4 tracking-tight">AI Chatbot Integration</h3>
-                            <p class="text-white/40 leading-relaxed">Custom intelligence built for your business. We create practical AI capabilities that support decisions, automate analysis, and fit your exact needs.</p>
+                            <p class="text-white/40 leading-relaxed">Custom intelligence built for your business. We create practical AI capabilities that support decisions, automate analysis, an[...]
                         </div>
                         <div class="glass p-10 rounded-[2.5rem] transition-all duration-500 hover:neon-border-cyan group">
                             <div class="w-16 h-16 rounded-2xl bg-[#00f2ff]/20 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-500">
                                 <iconify-icon icon="lucide:bot" class="text-cyan-400 text-3xl"></iconify-icon>
                             </div>
                             <h3 class="text-xl font-bold uppercase mb-4 tracking-tight">Chatbot Integration</h3>
-                            <p class="text-white/40 leading-relaxed">Intelligent conversational interfaces that automate lead gen and support, while staying connected to your real business knowledge.</p>
+                            <p class="text-white/40 leading-relaxed">Intelligent conversational interfaces that automate lead gen and support, while staying connected to your real business knowle[...]
                         </div>
                         <div class="glass p-10 rounded-[2.5rem] transition-all duration-500 hover:neon-border-cyan group">
                             <div class="w-16 h-16 rounded-2xl bg-[#00f2ff]/20 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-500">
                                 <iconify-icon icon="lucide:mic" class="text-cyan-400 text-3xl"></iconify-icon>
                             </div>
                             <h3 class="text-xl font-bold uppercase mb-4 tracking-tight">AI Voice Agent</h3>
-                            <p class="text-white/40 leading-relaxed">Voice-powered AI assistants that handle inquiries with natural processing, helping you respond faster and scale support without adding headcount.</p>
+                            <p class="text-white/40 leading-relaxed">Voice-powered AI assistants that handle inquiries with natural processing, helping you respond faster and scale support withou[...]
                         </div>
                     </div>
                 </div>
@@ -272,33 +286,33 @@
                         <div class="glass p-10 rounded-[2.5rem] border-white/5 flex flex-col hover:neon-border-cyan transition-all">
                             <h3 class="text-xl font-bold uppercase tracking-widest text-[#F27A21] mb-2">Starter</h3>
                             <ul class="space-y-4 mb-10 flex-grow">
-                                <li class="flex items-start gap-3 text-white/60 text-sm"><iconify-icon icon="lucide:check" class="text-[#F27A21]"></iconify-icon><span>Web Development (UI/UX Design)</span></li>
+                                <li class="flex items-start gap-3 text-white/60 text-sm"><iconify-icon icon="lucide:check" class="text-[#F27A21]"></iconify-icon><span>Web Development (UI/UX Desig[...]
                                 <li class="flex items-start gap-3 text-white/60 text-sm"><iconify-icon icon="lucide:check" class="text-[#F27A21]"></iconify-icon><span>Web Domain</span></li>
                                 <li class="flex items-start gap-3 text-white/60 text-sm"><iconify-icon icon="lucide:check" class="text-[#F27A21]"></iconify-icon><span>Web Hosting</span></li>
-                                <li class="flex items-start gap-3 text-white/60 text-sm"><iconify-icon icon="lucide:check" class="text-[#F27A21]"></iconify-icon><span>Basic Chatbot Integration</span></li>
-                                <li class="flex items-start gap-3 text-white/60 text-sm"><iconify-icon icon="lucide:check" class="text-[#F27A21]"></iconify-icon><span>3 Month Service Included</span></li>
-                                <li class="flex items-start gap-3 text-white/60 text-sm"><iconify-icon icon="lucide:check" class="text-[#F27A21]"></iconify-icon><span>24/7 Email Support</span></li>
+                                <li class="flex items-start gap-3 text-white/60 text-sm"><iconify-icon icon="lucide:check" class="text-[#F27A21]"></iconify-icon><span>Basic Chatbot Integration</s[...]
+                                <li class="flex items-start gap-3 text-white/60 text-sm"><iconify-icon icon="lucide:check" class="text-[#F27A21]"></iconify-icon><span>3 Month Service Included</sp[...]
+                                <li class="flex items-start gap-3 text-white/60 text-sm"><iconify-icon icon="lucide:check" class="text-[#F27A21]"></iconify-icon><span>24/7 Email Support</span></l[...]
                             </ul>
-                            <a href="#contact" id="price-starter-btn" class="w-full py-4 border border-white/10 rounded-full text-center text-sm font-bold uppercase tracking-widest hover:bg-white/5 transition-all">
+                            <a href="#contact" id="price-starter-btn" class="w-full py-4 border border-white/10 rounded-full text-center text-sm font-bold uppercase tracking-widest hover:bg-white[...]
                                 Get Started
                             </a>
                         </div>
 
                         <div class="glass p-10 rounded-[2.5rem] border-[#F27A21]/50 relative flex flex-col z-10 neon-border-orange bg-[#F27A21]/5">
-                            <div class="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-[#F27A21] text-black text-[10px] font-black uppercase tracking-[0.2em] rounded-full">Recommended</div>
+                            <div class="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-[#F27A21] text-black text-[10px] font-black uppercase tracking-[0.2em] rounded-full">Recommended</di[...]
                             <h3 class="text-xl font-bold uppercase tracking-widest text-[#F27A21] mb-2">Professional</h3>
                             <ul class="space-y-4 mb-10 flex-grow">
-                                <li class="flex items-start gap-3 text-white/60 text-sm"><iconify-icon icon="lucide:check" class="text-[#F27A21]"></iconify-icon><span>Web Development (UI/UX Design)</span></li>
+                                <li class="flex items-start gap-3 text-white/60 text-sm"><iconify-icon icon="lucide:check" class="text-[#F27A21]"></iconify-icon><span>Web Development (UI/UX Desig[...]
                                 <li class="flex items-start gap-3 text-white/60 text-sm"><iconify-icon icon="lucide:check" class="text-[#F27A21]"></iconify-icon><span>Web Domain</span></li>
                                 <li class="flex items-start gap-3 text-white/60 text-sm"><iconify-icon icon="lucide:check" class="text-[#F27A21]"></iconify-icon><span>Web Hosting</span></li>
-                                <li class="flex items-start gap-3 text-white/60 text-sm"><iconify-icon icon="lucide:check" class="text-[#F27A21]"></iconify-icon><span>Basic Chatbot Integration</span></li>
-                                <li class="flex items-start gap-3 text-white/60 text-sm"><iconify-icon icon="lucide:check" class="text-[#F27A21]"></iconify-icon><span>AI &amp; Automation</span></li>
-                                <li class="flex items-start gap-3 text-white/60 text-sm"><iconify-icon icon="lucide:check" class="text-[#F27A21]"></iconify-icon><span>Social Media Platform Integration</span></li>
+                                <li class="flex items-start gap-3 text-white/60 text-sm"><iconify-icon icon="lucide:check" class="text-[#F27A21]"></iconify-icon><span>Basic Chatbot Integration</s[...]
+                                <li class="flex items-start gap-3 text-white/60 text-sm"><iconify-icon icon="lucide:check" class="text-[#F27A21]"></iconify-icon><span>AI &amp; Automation</span></[...]
+                                <li class="flex items-start gap-3 text-white/60 text-sm"><iconify-icon icon="lucide:check" class="text-[#F27A21]"></iconify-icon><span>Social Media Platform Integr[...]
                                 <li class="flex items-start gap-3 text-white/60 text-sm"><iconify-icon icon="lucide:check" class="text-[#F27A21]"></iconify-icon><span>CRM Connectivity</span></li>
-                                <li class="flex items-start gap-3 text-white/60 text-sm"><iconify-icon icon="lucide:check" class="text-[#F27A21]"></iconify-icon><span>6 Month Service Included</span></li>
-                                <li class="flex items-start gap-3 text-white/60 text-sm"><iconify-icon icon="lucide:check" class="text-[#F27A21]"></iconify-icon><span>Priority 24/7 Support</span></li>
+                                <li class="flex items-start gap-3 text-white/60 text-sm"><iconify-icon icon="lucide:check" class="text-[#F27A21]"></iconify-icon><span>6 Month Service Included</sp[...]
+                                <li class="flex items-start gap-3 text-white/60 text-sm"><iconify-icon icon="lucide:check" class="text-[#F27A21]"></iconify-icon><span>Priority 24/7 Support</span>[...]
                             </ul>
-                            <a href="#contact" id="price-prof-btn" class="w-full py-4 bg-[#F27A21] text-black rounded-full text-center text-sm font-bold uppercase tracking-widest hover:brightness-110 transition-all">
+                            <a href="#contact" id="price-prof-btn" class="w-full py-4 bg-[#F27A21] text-black rounded-full text-center text-sm font-bold uppercase tracking-widest hover:brightness[...]
                                 Get Started
                             </a>
                         </div>
@@ -306,11 +320,11 @@
                         <div class="glass p-10 rounded-[2.5rem] border-white/5 flex flex-col hover:neon-border-cyan transition-all">
                             <h3 class="text-xl font-bold uppercase tracking-widest text-[#00f2ff] mb-2">Enterprise</h3>
                             <ul class="space-y-4 mb-10 flex-grow">
-                                <li class="flex items-start gap-3 text-white/60 text-sm"><iconify-icon icon="lucide:check" class="text-[#00f2ff]"></iconify-icon><span>Custom Development</span></li>
-                                <li class="flex items-start gap-3 text-white/60 text-sm"><iconify-icon icon="lucide:check" class="text-[#00f2ff]"></iconify-icon><span>Priority 24/7 Support</span></li>
-                                <li class="flex items-start gap-3 text-white/60 text-sm"><iconify-icon icon="lucide:check" class="text-[#00f2ff]"></iconify-icon><span>Connect team for full inquiry</span></li>
+                                <li class="flex items-start gap-3 text-white/60 text-sm"><iconify-icon icon="lucide:check" class="text-[#00f2ff]"></iconify-icon><span>Custom Development</span></l[...]
+                                <li class="flex items-start gap-3 text-white/60 text-sm"><iconify-icon icon="lucide:check" class="text-[#00f2ff]"></iconify-icon><span>Priority 24/7 Support</span>[...]
+                                <li class="flex items-start gap-3 text-white/60 text-sm"><iconify-icon icon="lucide:check" class="text-[#00f2ff]"></iconify-icon><span>Connect team for full inquir[...]
                             </ul>
-                            <a href="#contact" id="price-ent-btn" class="w-full py-4 border border-white/10 rounded-full text-center text-sm font-bold uppercase tracking-widest hover:bg-white/5 transition-all">
+                            <a href="#contact" id="price-ent-btn" class="w-full py-4 border border-white/10 rounded-full text-center text-sm font-bold uppercase tracking-widest hover:bg-white/5 t[...]
                                 Get Started
                             </a>
                         </div>
@@ -339,7 +353,7 @@
                                 <iconify-icon icon="lucide:chevron-down" class="faq-icon transition-transform duration-300"></iconify-icon>
                             </button>
                             <div class="faq-content max-h-0 overflow-hidden transition-all duration-300">
-                                <p class="px-8 pb-6 text-white/50">AI automates repetitive tasks, provides 24/7 customer support, and generates data-driven insights to optimize your growth strategy.</p>
+                                <p class="px-8 pb-6 text-white/50">AI automates repetitive tasks, provides 24/7 customer support, and generates data-driven insights to optimize your growth strate[...]
                             </div>
                         </div>
                         <div class="faq-item glass rounded-2xl border-white/5 overflow-hidden transition-all">
@@ -348,7 +362,7 @@
                                 <iconify-icon icon="lucide:chevron-down" class="faq-icon transition-transform duration-300"></iconify-icon>
                             </button>
                             <div class="faq-content max-h-0 overflow-hidden transition-all duration-300">
-                                <p class="px-8 pb-6 text-white/50">Yes, our systems are designed to be API-first and plug directly into CRM, ERP, and messaging platforms like Slack or WhatsApp.</p>
+                                <p class="px-8 pb-6 text-white/50">Yes, our systems are designed to be API-first and plug directly into CRM, ERP, and messaging platforms like Slack or WhatsApp.</[...]
                             </div>
                         </div>
                         <div class="faq-item glass rounded-2xl border-white/5 overflow-hidden transition-all">
@@ -415,7 +429,7 @@
                                 <textarea rows="4" placeholder="Tell us about your vision..." class="w-full px-6 py-4 rounded-xl resize-none"></textarea>
                             </div>
                             <div class="md:col-span-2 pt-4">
-                                <button type="submit" id="form-submit-btn" class="w-full py-5 bg-gradient-to-r from-[#00f2ff] to-[#F27A21] text-black font-black uppercase tracking-[0.2em] rounded-xl hover:shadow-lg hover:shadow-cyan-500/30 transition-all duration-300">
+                                <button type="submit" id="form-submit-btn" class="w-full py-5 bg-gradient-to-r from-[#00f2ff] to-[#F27A21] text-black font-black uppercase tracking-[0.2em] rounded[...]
                                     Transmit Data
                                 </button>
                             </div>
@@ -428,7 +442,7 @@
         <footer class="py-12 px-6 border-t border-white/10 bg-black">
             <div class="container mx-auto max-w-4xl text-center">
                 <div class="mb-6 flex justify-center">
-                    <img src="https://vgbujcuwptvheqijyjbe.supabase.co/storage/v1/object/public/hmac-uploads/uploads/d4c3a896-311d-47cb-8163-c5b2b81f9d9b/1783759215115-5d44e9e2/Updated_Logo_-_Without_BG.PNG" alt="A-TEK Services Logo Footer" style="height: 60px; width: auto; object-fit: contain;">
+                    <img src="https://vgbujcuwptvheqijyjbe.supabase.co/storage/v1/object/public/hmac-uploads/uploads/d4c3a896-311d-47cb-8163-c5b2b81f9d9b/1783759215115-5d44e9e2/Updated_Logo_-_Wit[...]
                 </div>
 
                 <p class="text-white/40 text-sm leading-relaxed max-w-md mx-auto font-bold text-white">
